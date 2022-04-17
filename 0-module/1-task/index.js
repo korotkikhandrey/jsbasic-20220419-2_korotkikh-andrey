@@ -1,3 +1,9 @@
+/**
+ * Gets a sum of given numbers.
+ * @param {*} m 
+ * @param {*} n 
+ * @returns sum of given numbers.
+ */
 function sum(m, n) {
-  // ваш код...
+  return m + n;
 }
