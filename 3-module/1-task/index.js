@@ -1,3 +1,7 @@
 function namify(users) {
-  // ваш код...
+  let namesArr = [];
+  for (let i in users) {
+    namesArr.push(users[i].name);
+  }
+  return namesArr;
 }
