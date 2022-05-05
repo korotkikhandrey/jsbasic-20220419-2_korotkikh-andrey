@@ -1,7 +1,14 @@
 function namify(users) {
-  let namesArr = [];
+  //gets non-empty-name users first
+  let usersWithNonEmptyNames = [];
   for (let i in users) {
-    namesArr.push(users[i].name);
+    if (users[i].name != null && users[i].name != undefined) {
+      usersWithNonEmptyNames.push(users[i]);
+    } 
   }
-  return namesArr;
+  return usersWithNonEmptyNames.map(getName);
+}
+
+function getName(user) {
+  return user.name;
 }
