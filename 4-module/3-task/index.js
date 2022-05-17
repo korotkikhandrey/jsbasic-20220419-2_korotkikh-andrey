@@ -22,7 +22,7 @@ function highlight(table) {
 
     let statusCol = currentRow.cells[statusColNr];
 
-    if(statusCol.getAttribute('data-available')) {
+    if(statusCol.dataset.available == 'true') {
       currentRow.classList.add('available');
     } else {
       currentRow.classList.add('unavailable');
