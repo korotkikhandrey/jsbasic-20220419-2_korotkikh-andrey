@@ -1,3 +1,0 @@
-function toggleText() {
-  // ваш код...
-}
