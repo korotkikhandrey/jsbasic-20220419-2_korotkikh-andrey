@@ -74,29 +74,13 @@ describe('7-module-2-task', () => {
       node.className = 'test-node-class';
       node.innerHTML = `<h4>${text}</h4>`;
 
-      console.log('createModalBody - node');
-      console.log(node);
-      
       return node;
     };
 
     const selectInnerTitle = () => {
       let modalBody = document.querySelector('.modal .modal__body');
-
-      console.log('modalBody : ');
-      console.log(modalBody);
-      console.log('modalBody.innerHTML: ' + modalBody.innerHTML);
-
       let nodeFromModal = modalBody.querySelector('.test-node-class');
-
-      console.log('nodeFromModal: ');
-      console.log(nodeFromModal);
-      console.log('nodeFromModal.querySelector(h4): ');
-      console.log(nodeFromModal.querySelector('h4'));
-      
       let innerTitle = nodeFromModal && nodeFromModal.querySelector('h4');
-      console.log("innerTitle : ");
-      console.log(innerTitle);
 
       return innerTitle.textContent;
     };
@@ -108,18 +92,11 @@ describe('7-module-2-task', () => {
     it('должен вставлять содержимое модального окна в элемента с классом "modal__body"', () => {
       let innerTitleText = 'Внутренний заголовок содержимого';
       const node = createModalBody(innerTitleText);
-      console.log(node);
 
       modal.setBody(node);
 
-      console.log('after modal.setBody(node)');
-      console.log(modal);
-
-
       modal.open();
-      
-      console.log('after modal.open()');
-      console.log(modal);
+
       expect(selectInnerTitle()).toBe(innerTitleText);
     });
 
